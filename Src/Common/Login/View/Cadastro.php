@@ -5,7 +5,10 @@
     <title></title>
 
     <?php
-    // Importar Módulo de Conexão e Crud de Logs
+      // Importar Módulo de Conexão e Crud de Logs
+      if(isset($_SESSION['logged'])){
+        header('Location: /E-Commerce/Src/User/View/index.php');
+      }
       require '../../../Common/MasterModel/Conn.php';
       require '../../../Common/MasterModel/CrudUsuario.php';
       require '../Controller/CrudUsuario.php';

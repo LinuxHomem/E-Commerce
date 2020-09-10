@@ -13,8 +13,11 @@
     <!-- Master Personal Css -->
     <link rel="stylesheet" href="Master.css">
 
-    <!-- Importar Módulo de Conexão, Crud de Produtos e Crud de Logs -->
     <?php
+      // Importar Módulo de Conexão, Crud de Produtos e Crud de Logs
+      if(!isset($_SESSION['adm'])){
+        header('Location: /E-Commerce/Src/User/View/index.php');
+      }
       require '../../../Common/MasterModel/Conn.php';
       require '../../../Common/MasterModel/CrudProduto.php';
       require '../../../Common/MasterModel/CrudLog.php';

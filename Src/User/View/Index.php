@@ -14,7 +14,7 @@
     <!-- import fontawesome css -->
     <script src="https://kit.fontawesome.com/8622f9455f.js" crossorigin="anonymous"></script>
     <!-- import personal css -->
-    <link rel="stylesheet" href="Main.css">
+    <link rel="stylesheet" href="Master.css">
   </head>
 
   <body>
@@ -174,7 +174,7 @@
         <h1 class="display-3 text-warning pa">Procurando Algo?</h1>
         <p class="display-4 pb">Insira abaixo e clique em pesquisar!</p>
         <hr class="my-4">
-        <form class="form-inline my-2 my-lg-0">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2 pr-5" type="search" placeholder="Digite algo..." aria-label="Pesquisar">
           <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Pesquisar</button>
         </form>

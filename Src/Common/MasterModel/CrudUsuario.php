@@ -2,7 +2,7 @@
   class CrudUsuario{
     // create section
     public function create($arr){
-      $sql = "INSERT INTO `cafe`.`usuarios` VALUES (NULL,?,?,?,?,?,NULL)";
+      $sql = "INSERT INTO `cafe`.`usuarios` VALUES (NULL,?,?,?,?,?,0)";
       $stmt = Conexao::getConn()->prepare($sql);
 
       $i = 1;

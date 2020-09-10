@@ -12,6 +12,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Master Personal Css -->
     <link rel="stylesheet" href="Master.css">
+
+    <?php
+      if(!isset($_SESSION['adm'])){
+        header('Location: /E-Commerce/Src/User/View/index.php');
+      }
+    ?>
   </head>
   <body>
 

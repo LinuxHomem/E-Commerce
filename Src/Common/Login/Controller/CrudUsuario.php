@@ -63,8 +63,14 @@
       if(count($arr) == 1){
         $arr = $arr[0];
 
+        $_SESSION['logged'] = true;
         $_SESSION['id'] = $arr['id'];
         $_SESSION['login'] = $arr['login'];
+
+        if($arr['adm'] == 1){
+          $_SESSION['adm'] = true;
+        }
+
       }else{
         echo "Senha Inválida";
       }
