@@ -1,10 +1,11 @@
 <?php
 class Conexao{
+
   private static $instance;
 
   public static function getConn(){
     if(!isset(self::$instance)){
-      self::$instance = new \PDO('mysql:host=localhost:3306;dbnme=loja;charset=utf8','root','');
+      self::$instance = new \PDO('mysql:host=localhost:3306;dbnme=cafe;charset=utf8','root','');
     }
     return self::$instance;
   }
