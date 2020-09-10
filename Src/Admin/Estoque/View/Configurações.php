@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Configurações</title>
-    <link rel="shortcut icon" href="../../../Images/Estoque/configuracoes-favicon.png">
+    <link rel="shortcut icon" href="../../../../Images/Estoque/configuracoes-favicon.png">
 
     <!-- Materialize Css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -23,7 +23,7 @@
     ?>
   </head>
   <body>
-    
+
     <nav>
       <div class="nav-wrapper">
         <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -69,7 +69,7 @@
               Apagar
             </button>
 
-            <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
               <div id="modal1" class="modal">
                 <div class="modal-content">
                   <h4>Tem Certeza?</h4>
@@ -98,7 +98,7 @@
             <button class="btn-large bt waves-effect waves-light red modal-trigger" href="#modal2">
               Resetar
             </button>
-            <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
               <div id="modal2" class="modal">
                 <div class="modal-content">
                   <h4>Tem Certeza?</h4>

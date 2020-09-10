@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Estoque</title>
-    <link rel="shortcut icon" href="../../../Images/estoque-favicon.png">
+    <link rel="shortcut icon" href="../../../../Images/Estoque/estoque-favicon.png">
 
     <!-- Materialize Css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -57,7 +57,7 @@
           </div>
 
           <div class="collapsible-body collap">
-            <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
               <div class="row">
                 <div class="input-field col s12">
                   <input type="text" id='vl' name="valor" required>
@@ -85,7 +85,7 @@
               </form>
 
               <div class="col s6 center">
-                <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                   <button class="btn-large bt waves-effect waves-light blue" type="submit" name="btn_searchAll">
                     Exibir Tudo
                   </button>
@@ -105,7 +105,7 @@
           </div>
 
           <div class="collapsible-body collap">
-            <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
               <div class="row">
 
                 <div class="input-field col l4 s12">
@@ -169,7 +169,7 @@
           </div>
 
           <div id="edit_collap" class="collapsible-body collap">
-            <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
               <div class="row">
 
                 <div class="input-field col l2 s12">

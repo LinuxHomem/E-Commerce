@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Início</title>
-    <link rel="shortcut icon" href="../../../Images/index-favicon.png">
+    <link rel="shortcut icon" href="../../../../Images/Estoque/index-favicon.png">
 
     <!-- Materialize Css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="Master.css">
   </head>
   <body>
-    
+
     <nav>
       <div class="nav-wrapper">
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
