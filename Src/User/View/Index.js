@@ -11,14 +11,6 @@ $('#way2').waypoint(function() {
 });
 
 $('#way3').waypoint(function() {
-  $(".cd4").animate({opacity: '1', bottom: 0}, "slow", function() {
-    $(".cd5").animate({opacity: '1', bottom: 0}, "slow", function() {
-      $(".cd6").animate({opacity: '1', bottom: 0}, "slow");
-    });
-  });
-});
-
-$('#way4').waypoint(function() {
   $(".jb").animate({opacity: '1', bottom: 0}, "slow");
 });
 

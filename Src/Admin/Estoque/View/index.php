@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="Master.css">
 
     <?php
-      if(!isset($_SESSION['adm'])){
-        header('Location: /E-Commerce/Src/User/View/index.php');
-      }
+      // if(!isset($_SESSION['adm'])){
+      //   header('Location: /E-Commerce/Src/User/View/index.php');
+      // }
     ?>
   </head>
   <body>

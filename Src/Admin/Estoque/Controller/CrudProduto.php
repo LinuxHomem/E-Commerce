@@ -122,7 +122,7 @@
   function update($arr){
     array_pop($arr);
 
-    if(strstr($arr[1],'R$')){
+    if(strstr($arr['valor'],'R$')){
       $arr['valor'] = explode(" ",$arr['valor']);
       $arr['valor'] = $arr['valor'][1];
     }

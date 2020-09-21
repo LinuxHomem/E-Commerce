@@ -14,13 +14,23 @@
     <!-- import fontawesome css -->
     <script src="https://kit.fontawesome.com/8622f9455f.js" crossorigin="anonymous"></script>
     <!-- import personal css -->
-    <link rel="stylesheet" href="Main.css">
+    <link rel="stylesheet" href="Master.css">
+
+    <?php
+    // Importar Módulo de Conexão, Crud de Logs e Crud de produtos
+      require '../../Common/MasterModel/Conn.php';
+      require '../Model/Pesquisa.php';
+      require '../Controller/Pesquisa.php';
+    ?>
   </head>
 
   <body>
     <!-- NavBar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-      <img style="max-height: 50px;" src="https://cdn4.iconfinder.com/data/icons/coffee-108/512/coffee-cafe-13-512.png">
+      <a href="/E-Commerce/Src/User/View/index.php">
+        <img style="max-height: 50px;" src="https://cdn4.iconfinder.com/data/icons/coffee-108/512/coffee-cafe-13-512.png">
+      </a>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -40,9 +50,39 @@
     </nav>
     <!-- NavBar -->
 
-    <p class="title">Doces</p>
+    <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="get">
+      <div class="container mt-4 w-75">
+        <center>
+          <p style="font-family:Roboto; font-size: 25px;margin-top:5px">Categorias</p>
+          <button name="search" value="Doce" title="Doce" type="submit" class="btn btn-danger btn-circle"><i class="fa fa-cookie-bite"></i></button>
+          <button name="search" value="Salgado" title="Salgado" type="submit" class="btn btn-success btn-circle"><i class="fa fa-pizza-slice"></i></button>
+          <button name="search" value="Bebida" title="Bebida" type="submit" class="btn btn-warning btn-circle"><i class="fa fa-coffee"></i></button>
+          <button name="search" value="Favorito" title="Favorito" type="submit" class="btn btn-info btn-circle"><i class="fa fa-heart"></i></button>
+        </center>
+      </div>
+    </form>
 
-    <div style="opacity: 0; position: relative; bottom: -5vh" class="container-xl mb-5 pb-5 mt-5 pt-5 jb">
+    <div style="background-color: #f1f1f1; max-width: 90%" class="container mt-4 pb-3">
+      <center>
+        <p class="pt-5" style="font-size:40pt"><?php title($_GET); ?></p>
+        <hr class="w-25 mb-1">
+        <p class="mt-3" style="font-size:18px">Feitos com os Melhores Ingredientes!</p>
+
+        <?php
+          if(!isset($_GET['pagina'])){
+              $_GET['pagina'] = 1;
+          }
+
+          if(isset($_GET['search'])){
+            renderSearh(read($_GET));
+          }else{
+            header('Location: /E-Commerce/Src/User/View/index.php');
+          }
+        ?>
+      </center>
+    </div>
+
+    <div class="container-xl mb-5 pb-5 mt-5 pt-5">
       <div class="jumbotron">
         <h1 class="display-3 text-warning pa">Procurando Algo?</h1>
         <p class="display-4 pb">Insira abaixo e clique em pesquisar!</p>

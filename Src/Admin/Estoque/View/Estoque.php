@@ -15,11 +15,12 @@
 
     <?php
       // Importar Módulo de Conexão, Crud de Produtos e Crud de Logs
-      if(!isset($_SESSION['adm'])){
-        header('Location: /E-Commerce/Src/User/View/index.php');
-      }
+      // if(!isset($_SESSION['adm'])){
+      //   header('Location: /E-Commerce/Src/User/View/index.php');
+      // }
+
       require '../../../Common/MasterModel/Conn.php';
-      require '../../../Common/MasterModel/CrudProduto.php';
+      require '../Model/CrudProduto.php';
       require '../../../Common/MasterModel/CrudLog.php';
       require '../Controller/CrudProduto.php';
     ?>
