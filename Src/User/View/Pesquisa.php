@@ -2,7 +2,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
-    <title>Café do VAV</title>
+    <title>Café do VAV - Pesquisar</title>
     <!-- mobile visualization -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon -->
@@ -17,10 +17,12 @@
     <link rel="stylesheet" href="Master.css">
 
     <?php
-    // Importar Módulo de Conexão, Crud de Logs e Crud de produtos
+      // Importar Módulo de Conexão, Crud de Logs e Crud de produtos
+      session_start();
       require '../../Common/MasterModel/Conn.php';
       require '../Model/Pesquisa.php';
       require '../Controller/Pesquisa.php';
+      require '../../Common/MasterController/NavBar.php';
     ?>
   </head>
 
@@ -42,10 +44,7 @@
           <li class="nav-item">
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Digite algo..." aria-label="Pesquisar">
-          <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Pesquisar</button>
-        </form>
+        <?php navbar(); ?>
       </div>
     </nav>
     <!-- NavBar -->
@@ -74,11 +73,19 @@
           }
 
           if(isset($_GET['search'])){
-            renderSearh(read($_GET));
+            renderSearh(read($_GET,true));
           }else{
             header('Location: /E-Commerce/Src/User/View/index.php');
           }
         ?>
+
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <?php
+              pagN(read($_GET,false));
+             ?>
+          </ul>
+        </nav>
       </center>
     </div>
 
@@ -114,14 +121,10 @@
     </footer>
 
     <!-- import jquery JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <!-- import popper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <!-- import bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <!-- waypoints JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js" charset="utf-8"></script>
-    <!-- import personal JS -->
-    <!-- <script src="Produtos.js" charset="utf-8"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   </body>
 </html>

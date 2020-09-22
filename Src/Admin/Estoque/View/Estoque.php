@@ -15,10 +15,10 @@
 
     <?php
       // Importar Módulo de Conexão, Crud de Produtos e Crud de Logs
-      // if(!isset($_SESSION['adm'])){
-      //   header('Location: /E-Commerce/Src/User/View/index.php');
-      // }
-
+      session_start();
+      if(!isset($_SESSION['adm'])){
+        header('Location: /E-Commerce/Src/User/View/index.php');
+      }
       require '../../../Common/MasterModel/Conn.php';
       require '../Model/CrudProduto.php';
       require '../../../Common/MasterModel/CrudLog.php';
@@ -31,6 +31,7 @@
       <div class="nav-wrapper">
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
+          <li><a class="inav" href="../../../User/View"><i class="material-icons left">arrow_back_ios</i>Voltar Para Loja</a></li>
           <li><a class="inav" href="index.php"><i class="material-icons left">arrow_back_ios</i>Início</a></li>
           <li><a class="inav" href="Estatísticas.php"><i class="material-icons left">timeline</i>Estatísticas</a></li>
           <li><a class="inav" href="Configurações.php"><i class="material-icons left">settings</i>Configurações</a></li>
@@ -42,6 +43,7 @@
     <!-- Mobile Sidebar -->
     <ul class="sidenav" id="mobile-demo">
       <li class="margin"><p class="title2">ESTOQUE</p></li>
+      <li class="item"><a class="inav" href="../../../User/View"><i class="material-icons left">arrow_back_ios</i>Voltar Para Loja</a></li>
       <li class="item"><a class="inav" href="index.php"><i class="material-icons left">arrow_back_ios</i>Início</a></li>
       <li class="item"><a class="inav" href="Estatísticas.php"><i class="material-icons left">timeline</i>Estatísticas</a></li>
       <li class="item"><a class="inav" href="Configurações.php"><i class="material-icons left">settings</i>Configurações</a></li>
@@ -109,7 +111,7 @@
           </div>
 
           <div class="collapsible-body collap">
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
               <div class="row">
 
                 <div class="input-field col l4 s12">
@@ -129,7 +131,19 @@
               </div>
 
               <!-- Segunda Linha -->
+              <div class="row">
+                <div class="file-field input-field col l10 s12">
+                  <div class="btn red">
+                    <span>Imagem</span>
+                    <input name="imagem" type="file" accept="image/jpeg, image/jpg, image/png" required>
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                  </div>
+                </div>
+              </div>
 
+              <!-- Terceira Linha -->
               <div class="row">
                 <div class="input-field col l3 s12">
                   <select name="categoria" required>
@@ -173,7 +187,7 @@
           </div>
 
           <div id="edit_collap" class="collapsible-body collap">
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
               <div class="row">
 
                 <div class="input-field col l2 s12">
@@ -198,7 +212,6 @@
               </div>
 
               <!-- Segunda Linha -->
-
               <div class="row">
                 <div class="input-field col l3 s12">
                   <select id="cat" name="cat" required>
@@ -263,13 +276,12 @@
 
         }else if(isset($_POST['btn_edit'])){
           $ret = update($_POST);
-
           if(!$ret){
             echo "Não foi possível editar o produto.";
             echo read(array("","",""));
           }else{
             echo "Produto Editado. <br>";
-            read(array($ret[0],"ID",""));
+            read(array($ret,"ID",""));
           }
 
         }else if(isset($_POST['btn_delete'])){

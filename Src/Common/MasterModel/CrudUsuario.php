@@ -12,19 +12,23 @@
       }
 
       if($stmt->execute() === false){
-        echo "Não Foi";
+        echo "<script>alert('Não foi possível realizar cadastro')</script>";
       }else{
-        echo "Foi";
+        header('Location: /E-Commerce/Src/Common/Login/View/Login.php');
       }
     }
     // create section
 
     // read section
     public function read($arr){
-      $sql = "SELECT * FROM `cafe`.`usuarios` WHERE $arr[1]";
+      $sql = "SELECT * FROM `cafe`.`usuarios` WHERE $arr[2]";
       $stmt = Conexao::getConn()->prepare($sql);
-
-      $stmt->bindValue(1,$arr[0]);
+      if($arr[0] == ""){
+        $stmt->bindValue(1,$arr[1]);
+      }else{
+        $stmt->bindValue(1,$arr[0]);
+        $stmt->bindValue(2,$arr[1]);
+      }
 
       if($stmt->execute() === false){
         return 'erro';

@@ -15,6 +15,10 @@
     <script src="https://kit.fontawesome.com/8622f9455f.js" crossorigin="anonymous"></script>
     <!-- import personal css -->
     <link rel="stylesheet" href="Master.css">
+    <?php
+      session_start();
+      require '../../Common/MasterController/NavBar.php';
+    ?>
   </head>
 
   <body>
@@ -32,10 +36,7 @@
           <li class="nav-item">
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Digite algo..." aria-label="Pesquisar">
-          <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Pesquisar</button>
-        </form>
+        <?php navbar(); ?>
       </div>
     </nav>
     <!-- NavBar -->
@@ -148,8 +149,8 @@
         <h1 class="display-3 text-warning pa">Procurando Algo?</h1>
         <p class="display-4 pb">Insira abaixo e clique em pesquisar!</p>
         <hr class="my-4">
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2 pr-5" type="search" placeholder="Digite algo..." aria-label="Pesquisar">
+        <form class="form-inline my-2 my-lg-0" method="get" action="Pesquisa.php">
+          <input name="search" class="form-control mr-sm-2 pr-5" type="search" placeholder="Digite algo..." aria-label="Pesquisar">
           <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Pesquisar</button>
         </form>
       </div>
@@ -175,14 +176,14 @@
     </footer>
 
     <!-- import jquery JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <!-- import popper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <!-- import bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- waypoints JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
     <!-- import personal JS -->
-    <script src="Index.js" charset="utf-8"></script>
+    <script src="../Controller/Index.js" charset="utf-8"></script>
   </body>
 </html>

@@ -15,9 +15,28 @@
     array_pop($arr);
     $arr['valor'] = explode(" ",$arr['valor']);
     $arr['valor'] = $arr['valor'][1];
+
     $cArr = clear($arr);
-    $instance = new \CrudProduto();
-    return $instance->create($cArr);
+    $type = array("png", "jpeg", "jpg");
+    $fileType = pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
+
+    if(in_array($fileType,$type)){
+      $temp = $_FILES['imagem']['tmp_name'];
+      $name = uniqid() . ".$fileType";
+
+      $cArr = array_chunk($cArr,3);
+      $cArr[0][] = $name;
+      $cArr = array_merge($cArr[0],$cArr[1]);
+      if(move_uploaded_file($temp, "../../../Common/Images/$name")){
+
+        $instance = new \CrudProduto();
+        return $instance->create($cArr);
+      }else{
+        echo "Não foi possível fazer upload da imagem <br>";
+      }
+    }else{
+      echo "Selecione um Formato de imagem válido <br>";
+    }
   }
   // create section
 

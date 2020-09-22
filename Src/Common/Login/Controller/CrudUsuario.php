@@ -12,7 +12,7 @@
 
   // create section
   function create($arr){
-    array_splice($arr,6,2);
+    array_pop($arr);
     $cArr = clear($arr);
 
     // verificações
@@ -49,13 +49,13 @@
     array_pop($arr);
     $cArr = clear($arr);
     $cArr[1] = md5($cArr[1]);
-    $sch = array($cArr[0],'login = ?');
+    $sch = array("",$cArr[0],'login = ?');
 
     $instance = new \CrudUsuario();
     $arr = $instance->read($sch);
 
     if(count($arr) == 1){
-      $sch = array($cArr[1],'senha = ?');
+      $sch = array($cArr[0], $cArr[1],'login = ? and senha = ?');
 
       $instance = new \CrudUsuario();
       $arr = $instance->read($sch);
@@ -71,6 +71,7 @@
           $_SESSION['adm'] = true;
         }
 
+        header('Location: /E-Commerce/Src/User/View/index.php');
       }else{
         echo "Senha Inválida";
       }

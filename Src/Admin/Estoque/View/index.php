@@ -14,9 +14,10 @@
     <link rel="stylesheet" href="Master.css">
 
     <?php
-      // if(!isset($_SESSION['adm'])){
-      //   header('Location: /E-Commerce/Src/User/View/index.php');
-      // }
+      session_start();
+      if(!isset($_SESSION['adm'])){
+        header('Location: /E-Commerce/Src/User/View/index.php');
+      }
     ?>
   </head>
   <body>
@@ -25,6 +26,7 @@
       <div class="nav-wrapper">
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
+          <li><a class="inav" href="../../../User/View"><i class="material-icons left">arrow_back_ios</i>Voltar Para Loja</a></li>
           <li><a class="inav" href="Estoque.php"><i class="material-icons left">storefront</i>Estoque</a></li>
           <li><a class="inav" href="Estatísticas.php"><i class="material-icons left">timeline</i>Estatísticas</a></li>
           <li><a class="inav" href="Configurações.php"><i class="material-icons left">settings</i>Configurações</a></li>
@@ -33,7 +35,8 @@
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-      <li class="margin"><p class="title2">LOJA</p></li>
+      <li class="margin"><p class="title2">ESTOQUE</p></li>
+      <li class="item"><a class="inav" href="../../../User/View"><i class="material-icons left">arrow_back_ios</i>Voltar Para Loja</a></li>
       <li class="item"><a class="inav" href="Estoque.php"><i class="material-icons left">storefront</i>Estoque</a></li>
       <li class="item"><a class="inav" href="Estatísticas.php"><i class="material-icons left">timeline</i>Estatísticas</a></li>
       <li class="item"><a class="inav" href="Configurações.php"><i class="material-icons left">settings</i>Configurações</a></li>
@@ -42,9 +45,9 @@
     <div class="container valign-wrapper content">
       <div class="content2">
         <center>
-          <p class="title">LOJA</p>
+          <p class="title">Estoque</p>
           <ul>
-            <li><a href="Estoque.php" class="waves-effect waves-light btn-large red lighten-2 bt2">Estoque</a></li>
+            <li><a href="Estoque.php" class="waves-effect waves-light btn-large red lighten-2 bt2">Acessar</a></li>
           </ul>
         </center>
       <div>
