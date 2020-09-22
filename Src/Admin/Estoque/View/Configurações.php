@@ -22,7 +22,7 @@
         header('Location: /E-Commerce/Src/User/View/index.php');
       }
       require '../../../Common/MasterModel/Conn.php';
-      require '../Model/CrudProduto.php';
+      require '../../../Common/MasterModel/CrudProduto.php';
       require '../../../Common/MasterModel/CrudLog.php';
     ?>
   </head>

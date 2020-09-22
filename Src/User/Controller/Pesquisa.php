@@ -75,7 +75,7 @@
                 <small>$small</small>
                 <h5 class='text-success'>R$: $valor</h5>
 
-                <form action='Produto.php' method='get'>
+                <form action='Encomenda.php' method='post'>
                   <button name='produto' value='$id' type='submit' style='font-size:20px' class='btn btn-warning'>Encomendar</button>
                 </form>
               </div>
