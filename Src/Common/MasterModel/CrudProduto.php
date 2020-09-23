@@ -93,4 +93,18 @@
       sql($sql);
     }
     // reset id section
+
+    public function removeOne($id,$qtd){
+      $sql = "UPDATE `cafe`.`produtos` SET quantidade = ? WHERE id = ?";
+      $stmt = Conexao::getConn()->prepare($sql);
+
+      $stmt->bindValue(1,$qtd);
+      $stmt->bindValue(2,$id);
+
+      if($stmt->execute() === false){
+        return false;
+      }else{
+        return true;
+      }
+    }
   }

@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Chartist Css -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <!-- Master Personal Css -->
     <link rel="stylesheet" href="Master.css">
 
@@ -22,7 +20,7 @@
         header('Location: /E-Commerce/Src/User/View/index.php');
       }
       require '../../../Common/MasterModel/Conn.php';
-      require '../Model/CrudProduto.php';
+      require '../../../Common/MasterModel/CrudProduto.php';
       require '../../../Common/MasterModel/CrudLog.php';
     ?>
   </head>
@@ -33,9 +31,11 @@
         <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
           <li><a class="inav" href="../../../User/View"><i class="material-icons left">arrow_back_ios</i>Voltar Para Loja</a></li>
-          <li><a class="inav" href="index.php"><i class="material-icons left">arrow_back_ios</i>Início</a></li>
+          <li><a class="inav" href="index.php"><i class="material-icons left">menu</i>Início</a></li>
           <li><a class="inav" href="Estoque.php"><i class="material-icons left">storefront</i>Estoque</a></li>
           <li><a class="inav" href="Estatísticas.php"><i class="material-icons left">timeline</i>Estatísticas</a></li>
+          <li><a class="inav" href="../../Pedidos/View/Pedidos.php"><i class="material-icons left">receipt</i>Pedidos</a></li>
+          <li><a class="inav" href="Usuarios.php"><i class="material-icons left">account_circle</i>Usuários</a></li>
         </ul>
       </div>
     </nav>
@@ -43,9 +43,11 @@
     <ul class="sidenav" id="mobile-demo">
       <li class="margin"><p class="title5">Configurações</p></li>
       <li class="item"><a class="inav" href="../../../User/View"><i class="material-icons left">arrow_back_ios</i>Voltar Para Loja</a></li>
-      <li class="item"><a class="inav" href="index.php"><i class="material-icons left">arrow_back_ios</i>Início</a></li>
+      <li class="item"><a class="inav" href="index.php"><i class="material-icons left">menu</i>Início</a></li>
       <li class="item"><a class="inav" href="Estoque.php"><i class="material-icons left">storefront</i>Estoque</a></li>
       <li class="item"><a class="inav" href="Estatísticas.php"><i class="material-icons left">timeline</i>Estatísticas</a></li>
+      <li class="item"><a class="inav" href="../../Pedidos/View/Pedidos.php"><i class="material-icons left">receipt</i>Pedidos</a></li>
+      <li class="item"><a class="inav" href="Usuarios.php"><i class="material-icons left">account_circle</i>Usuários</a></li>
     </ul>
 
     <p class="title4">Configurações</p>

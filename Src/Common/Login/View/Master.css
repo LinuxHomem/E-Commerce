@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffad33;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff9900;
+}
+
 .title {
   position: relative;
   font-family: 'Roboto', sans-serif;
@@ -22,11 +38,25 @@
   .cont{
     width: 75% !important;
   }
+
+  .cont2{
+    margin-left: 5vw;
+    margin-bottom: 50px !important;
+    padding: 10px;
+    width: 90% !important;
+  }
 }
 
 /* desktop */
 @media only screen and (min-width: 601px) {
   .cont{
     width: 50% !important;
+  }
+
+  .cont2{
+    margin-left: 25%;
+    padding: 15px;
+    width: 50% !important;
+    margin-bottom: 50px !important;
   }
 }

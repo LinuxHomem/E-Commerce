@@ -17,12 +17,12 @@
     unset($arr);
 
     if($cArr[0] == 'Doce' or $cArr[0] == 'Salgado' or $cArr[0] == 'Bebida'){
-      $arr[] = "WHERE categoria = ?";
+      $arr[] = "WHERE categoria = ? and quantidade > 0";
       $arr[] = $cArr[0];
     }else if($cArr[0] == 'Favoritos'){
       // FAVORITOSSSSS
     }else{
-      $arr[] = "WHERE nome LIKE ?";
+      $arr[] = "WHERE nome LIKE ? and quantidade > 0";
       $arr[] = "%" . $cArr[0] . "%";
     }
 
@@ -75,7 +75,7 @@
                 <small>$small</small>
                 <h5 class='text-success'>R$: $valor</h5>
 
-                <form action='Produto.php' method='get'>
+                <form action='Encomenda.php' method='post'>
                   <button name='produto' value='$id' type='submit' style='font-size:20px' class='btn btn-warning'>Encomendar</button>
                 </form>
               </div>

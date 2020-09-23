@@ -76,7 +76,7 @@
         </div>
 
         <div class="form-group">
-          <label class="h4" for="nome">Nome</label>
+          <label class="h4" for="nome">Nome Completo</label>
           <input name="nome" class="form-control" id="nome" placeholder="Insira seu Nome" required>
         </div>
 

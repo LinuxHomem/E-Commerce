@@ -37,7 +37,7 @@ DROP TABLE IF EXISTS `logs`;
 CREATE TABLE IF NOT EXISTS `logs` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `data` date NOT NULL,
-  `valor_max` decimal(65,38) NOT NULL,
+  `valor_max` decimal(65,30) NOT NULL,
   `qtd_produto` int(255) NOT NULL,
   `operacao` varchar(255) NOT NULL,
   `prod_id` int(255) NOT NULL,
