@@ -115,10 +115,6 @@
       </div>
     </div>
 
-    <div class="container">
-
-    </div>
-
     <footer class="page-footer">
       <div class="container">
         <div class="row">
