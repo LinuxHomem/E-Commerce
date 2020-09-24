@@ -1,7 +1,7 @@
 <?php
   function pedidos(){
     $instance = new \CrudPedido();
-    $pedidos = $instance->read(1,"WHERE situacao != ?");
+    $pedidos = $instance->read("","");
 
     if(count($pedidos) > 0){
 
@@ -39,20 +39,23 @@
                 <td>$nome</td>
                 <td>$produto</td>
                 <td>R$:$valor</td>
-                <td>
-                  <button type='submit' name='pronto' value='$npedi$$prodid$$qtd'>
-                    <a class='btn-floating btn-large waves-effect waves-light light-green accent-3'>
-                      <i style='color: #000000;' class='material-icons'>done</i>
-                    </a>
-                  </button>
+                <td>";
 
-                  <button type='submit' name='remove' value='$npedi'>
-                    <a class='btn-floating btn-large waves-effect waves-light red'>
-                      <i style='color: #000000;' class='material-icons'>delete</i>
-                    </a>
-                  </button>
-                </td>
-              </tr>";
+        if($pedi['situacao'] == 0){
+          echo "<button type='submit' name='pronto' value='$npedi$$prodid$$qtd'>
+                  <a class='btn-floating btn-large waves-effect waves-light light-green accent-3'>
+                    <i style='color: #000000;' class='material-icons'>done</i>
+                  </a>
+                </button>";
+        }
+
+        echo "<button type='submit' name='remove' value='$npedi'>
+                <a class='btn-floating btn-large waves-effect waves-light red'>
+                  <i style='color: #000000;' class='material-icons'>delete</i>
+                </a>
+              </button>
+            </td>
+          </tr>";
       }
 
       echo "</tbody></table>";

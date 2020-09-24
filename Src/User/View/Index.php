@@ -17,25 +17,22 @@
     <link rel="stylesheet" href="Master.css">
     <?php
       session_start();
+      require '../../Common/MasterModel/Conn.php';
+      require '../../Common/MasterModel/CrudProduto.php';
       require '../../Common/MasterController/NavBar.php';
+      require '../Controller/Index.php';
     ?>
   </head>
 
   <body>
     <!-- NavBar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-      <img style="max-height: 50px;" src="https://cdn4.iconfinder.com/data/icons/coffee-108/512/coffee-cafe-13-512.png">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a href='Index.php'><img class="mr-3" style="max-width: 50px;" src="https://cdn4.iconfinder.com/data/icons/coffee-108/512/coffee-cafe-13-512.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-          </li>
-          <li class="nav-item">
-          </li>
-        </ul>
+      <div id="nav" class="collapse navbar-collapse">
         <?php navbar(); ?>
       </div>
     </nav>
@@ -63,38 +60,7 @@
 
     <center>
       <div class="card-deck mt-5 w-75">
-        <div style="opacity:0; bottom: -5vh" class="card cd1">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQspvDYrhpAN8w4NWaEFDTdMeOm1Dk5OFQUhw&usqp=CAU" class="card-img-top">
-            <div class="card-body" style="background-color: #f2f2f2">
-            <h5 class="card-title">Café Expresso</h5>
-            <p class="card-text">Café Expresso simples para acompanhar qualquer refeição.</p>
-            <small><del>R$: 8,00</del></small>
-            <h5 class="text-success">R$: 5,00</h5>
-            <a style="font-size:20px" class="btn btn-warning">Encomendar</a>
-          </div>
-        </div>
-
-        <div style="opacity:0; bottom: -5vh" class="card cd2">
-          <img src="https://receitanatureba.com/wp-content/uploads/2017/03/Bolo-Simples-Fit-de-Chocolate-1200x1200.jpg" class="card-img-top">
-          <div class="card-body" style="background-color: #f2f2f2">
-            <h5 class="card-title">Bolo de Chocolate</h5>
-            <p class="card-text">Pedaço de Bolo de Chocolate para seu café da manhã.</p>
-            <small><del>R$: 3,00</del></small>
-            <h5 class="text-success">R$: 2,00</h5>
-            <a style="font-size:20px" class="btn btn-warning">Encomendar</a>
-          </div>
-        </div>
-
-        <div style="opacity:0; bottom: -5vh" class="card cd3">
-          <img src="https://s2.glbimg.com/cn2TYUeqZVCdtqXLhFsIkoQbGOw=/0x0:450x450/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2013/01/22/16_33_35_104_pao_de_queijo_2.jpg" class="card-img-top">
-          <div class="card-body" style="background-color: #f2f2f2">
-            <h5 class="card-title">Pão de Queijo</h5>
-            <p class="card-text">Pão de Queijo tradicional mineiro quentinho.</p>
-            <small>400g</small>
-            <h5 class="text-success">R$: 6,00</h5>
-            <a style="font-size:20px" class="btn btn-warning">Encomendar</a>
-          </div>
-        </div>
+        <?php card(); ?>
       </div>
     </center>
 

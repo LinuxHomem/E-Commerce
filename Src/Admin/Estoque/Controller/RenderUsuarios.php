@@ -8,6 +8,19 @@
       $arr = $instance->read(array("","0","id > ?"));
     }
 
+    echo "<table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Login</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+              </tr>
+            </thead>
+
+            <tbody>";
+
     foreach($arr as $user){
       $id = $user['id'];
       $login = $user['login'];
@@ -15,26 +28,13 @@
       $nome = $user['nome'];
       $tel = $user['telefone'];
 
-      echo "<table>
-              <thead>
-                <tr>
-                  <th>Id</th>
-                  <th>Login</th>
-                  <th>Nome</th>
-                  <th>Email</th>
-                  <th>Telefone</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>$id</td>
-                  <td>$login</td>
-                  <td>$email</td>
-                  <td>$nome</td>
-                  <td>$tel</td>
-                </tr>
-              </tbody>
-            </table>";
+      echo "<tr>
+              <td>$id</td>
+              <td>$login</td>
+              <td>$email</td>
+              <td>$nome</td>
+              <td>$tel</td>
+            </tr>";
     }
+    echo "</tbody></table>";
   }

@@ -5,7 +5,9 @@ class CrudPedido{
       $sql = "SELECT * FROM `cafe` . `pedidos` $term";
       $stmt = Conexao::getConn()->prepare($sql);
 
-      $stmt->bindValue(1,$id);
+      if($term != ""){
+        $stmt->bindValue(1,$id);
+      }
 
       if($stmt->execute() === false){
         return false;
@@ -18,8 +20,9 @@ class CrudPedido{
     public function create($userid,$prodid){
       $sql = "INSERT INTO `cafe`.`pedidos` VALUES (NULL,?,?,0)";
       $stmt = Conexao::getConn()->prepare($sql);
-      $stmt->bindValue(2,$userid);
-      $stmt->bindValue(1,$prodid);
+
+      $stmt->bindValue(1,$userid);
+      $stmt->bindValue(2,$prodid);
 
       if($stmt->execute() === false){
         return false;
@@ -54,4 +57,18 @@ class CrudPedido{
         return true;
       }
     }
+
+    // reset id section
+    public function resetId(){
+      function sql($sql){
+        $stmt = Conexao::getConn()->prepare($sql);
+        $stmt->execute();
+      }
+      $sql = "ALTER TABLE `cafe`.`pedidos` DROP `id`";
+      sql($sql);
+
+      $sql = "ALTER TABLE `cafe`.`pedidos` ADD `id` INT(255) NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (`id`)";
+      sql($sql);
+    }
+    // reset id section
   }

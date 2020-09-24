@@ -36,7 +36,7 @@
         $info = $arr['small'];
         $valor = $arr['valor'];
 
-        $subT += str_replace(",",".",$valor)[0];
+        $subT += str_replace(",",".",$valor);
 
         echo "<tr>
                 <th scope='col'>$id</th>
@@ -51,6 +51,9 @@
 
       if(strstr($subT,".")){
         $subT = str_replace(".",",",$subT);
+        if(strlen(explode(",",$subT) [0]) == 1){
+          $subT = $subT . "0";
+        }
       }else{
         $subT = $subT . ",00";
       }
@@ -79,7 +82,7 @@
       $prod = $instance->read(array($id,"WHERE id = ?"));
 
       $instance = new \CrudPedido();
-      $return = $instance->create($_SESSION['id'],$prod[0]['id']);
+      $return = $instance->create($_SESSION['id'],$prod[1][0]['id']);
 
       if($return){
         $_SESSION['carrinho'] = array();

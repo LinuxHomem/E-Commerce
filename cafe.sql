@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 10-Set-2020 às 22:52
--- Versão do servidor: 10.4.10-MariaDB
--- versão do PHP: 7.3.12
+-- Tempo de geração: 23-Set-2020 às 00:24
+-- Versão do servidor: 8.0.21
+-- versão do PHP: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -28,21 +27,24 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `logs`
 --
 
-
-CREATE DATABASE cafe;
-
-USE cafe;
-
 DROP TABLE IF EXISTS `logs`;
 CREATE TABLE IF NOT EXISTS `logs` (
-  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `data` date NOT NULL,
   `valor_max` decimal(65,30) NOT NULL,
-  `qtd_produto` int(255) NOT NULL,
+  `qtd_produto` int NOT NULL,
   `operacao` varchar(255) NOT NULL,
-  `prod_id` int(255) NOT NULL,
+  `prod_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `logs`
+--
+
+INSERT INTO `logs` (`id`, `data`, `valor_max`, `qtd_produto`, `operacao`, `prod_id`) VALUES
+(1, '2020-09-22', '50.000000000000000000000000000000', 1, 'create', 1),
+(2, '2020-09-22', '1.000000000000000000000000000000', 1, 'update', 1);
 
 -- --------------------------------------------------------
 
@@ -52,11 +54,25 @@ CREATE TABLE IF NOT EXISTS `logs` (
 
 DROP TABLE IF EXISTS `pedidos`;
 CREATE TABLE IF NOT EXISTS `pedidos` (
-  `id` int(255) NOT NULL AUTO_INCREMENT,
-  `user_id` int(255) NOT NULL,
-  `prod_id` int(255) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `prod_id` int NOT NULL,
+  `situacao` bit(1) NOT NULL DEFAULT b'0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `pedidos`
+--
+
+INSERT INTO `pedidos` (`id`, `user_id`, `prod_id`, `situacao`) VALUES
+(1, 1, 1, b'0'),
+(2, 1, 1, b'0'),
+(3, 1, 1, b'0'),
+(4, 1, 1, b'0'),
+(5, 1, 1, b'0'),
+(7, 1, 1, b'1'),
+(33, 1, 1, b'1');
 
 -- --------------------------------------------------------
 
@@ -66,15 +82,23 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
 
 DROP TABLE IF EXISTS `produtos`;
 CREATE TABLE IF NOT EXISTS `produtos` (
-  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   `valor` varchar(255) NOT NULL,
-  `quantidade` int(255) NOT NULL,
+  `quantidade` int NOT NULL,
+  `imagem` varchar(255) NOT NULL,
   `categoria` varchar(255) NOT NULL,
   `descricao` varchar(255) DEFAULT NULL,
   `small` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`id`, `nome`, `valor`, `quantidade`, `imagem`, `categoria`, `descricao`, `small`) VALUES
+(1, 'Café Preto', '1,00', 0, '5f6a294b5b0b0.jpg', 'Bebida', 'O tradicional café preto', '100ml');
 
 -- --------------------------------------------------------
 
@@ -84,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `produtos` (
 
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
-  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `login` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -101,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `login`, `senha`, `email`, `nome`, `telefone`, `adm`) VALUES
-(1, 'ViniGTO', '245a356c822aac70d62a9732d90562f8', 'viniaraujo417@gmail.com', 'Vinícius Araújo Batista', '+55 (11) 97618-7378', b'1');
+(1, 'LinuxMen', '245a356c822aac70d62a9732d90562f8', 'viniaraujo417@gmail.com', 'Vinícius Araújo Batista', '+55 (11) 97618-7378', b'1');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

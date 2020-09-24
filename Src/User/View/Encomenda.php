@@ -33,21 +33,12 @@
   <body>
     <!-- NavBar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-      <a href="/E-Commerce/Src/User/View/index.php">
-        <img style="max-height: 50px;" src="https://cdn4.iconfinder.com/data/icons/coffee-108/512/coffee-cafe-13-512.png">
-      </a>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a href='Index.php'><img class="mr-3" style="max-width: 50px;" src="https://cdn4.iconfinder.com/data/icons/coffee-108/512/coffee-cafe-13-512.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-          </li>
-          <li class="nav-item">
-          </li>
-        </ul>
+      <div id="nav" class="collapse navbar-collapse">
         <?php navbar(); ?>
       </div>
     </nav>
@@ -76,6 +67,10 @@
           $small = $arr['small'];
           $valor = $arr['valor'];
           $id = $arr['id'];
+
+          if(strstr($small,"R$")){
+            $small = "<del>$small<del>";
+          }
 
           echo "<img src='../../Common/Images/$image' class='card-img-top'>
                   <div class='card-body' style='background-color: #f2f2f2'>
@@ -109,7 +104,7 @@
         <p class="display-4 pb">Insira abaixo e clique em pesquisar!</p>
         <hr class="my-4">
         <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2 pr-5" type="search" placeholder="Digite algo..." aria-label="Pesquisar">
+          <input name="search" class="form-control mr-sm-2 pr-5" type="search" placeholder="Digite algo..." aria-label="Pesquisar">
           <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Pesquisar</button>
         </form>
       </div>

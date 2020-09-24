@@ -21,6 +21,7 @@
       }
       require '../../../Common/MasterModel/Conn.php';
       require '../../../Common/MasterModel/CrudProduto.php';
+      require '../../../Common/MasterModel/CrudPedido.php';
       require '../../../Common/MasterModel/CrudLog.php';
     ?>
   </head>
@@ -121,6 +122,35 @@
             </form>
           </div>
         </li>
+
+        <li>
+          <div class="collapsible-header">
+            <i class="material-icons">receipt</i>
+            Resetar Ordem de ID's dos Pedidos
+            <span class="badge"></span>
+          </div>
+
+          <div id="edit_collap" class="collapsible-body collap">
+            <p style="font-size:20px">Resetar a ordem dos ID's dos pedidos.</p>
+
+            <button class="btn-large bt waves-effect waves-light red modal-trigger" href="#modal3">
+              Resetar
+            </button>
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+              <div id="modal3" class="modal">
+                <div class="modal-content">
+                  <h4>Tem Certeza?</h4>
+                  <p>Você tem certeza que deseja resetar a ordem dos ID's dos pedidos? Os atuais pedidos irão perder a ordem atual.</p>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="modal-close waves-effect waves-green btn-flat">Cancelar</button>
+                  <button type="submit" name="btn_reset_pedi" class="waves-effect waves-green btn-flat">Resetar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </li>
       </ul>
     </div>
 
@@ -130,6 +160,9 @@
         $instance->delete();
       }else if(isset($_POST['btn_reset'])){
         $instance = new \CrudProduto;
+        $instance->resetId();
+      }else if(isset($_POST['btn_reset_pedi'])){
+        $instance = new \CrudPedido;
         $instance->resetId();
       }
      ?>

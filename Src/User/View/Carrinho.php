@@ -32,22 +32,14 @@
 
   <body>
     <!-- NavBar -->
+    <!-- NavBar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-      <a href="/E-Commerce/Src/User/View/index.php">
-        <img style="max-height: 50px;" src="https://cdn4.iconfinder.com/data/icons/coffee-108/512/coffee-cafe-13-512.png">
-      </a>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a href='Index.php'><img class="mr-3" style="max-width: 50px;" src="https://cdn4.iconfinder.com/data/icons/coffee-108/512/coffee-cafe-13-512.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-          </li>
-          <li class="nav-item">
-          </li>
-        </ul>
+      <div id="nav" class="collapse navbar-collapse">
         <?php navbar(); ?>
       </div>
     </nav>

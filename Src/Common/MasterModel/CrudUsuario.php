@@ -14,7 +14,7 @@
       if($stmt->execute() === false){
         echo "<script>alert('Não foi possível realizar cadastro')</script>";
       }else{
-        header('Location: /E-Commerce/Src/Common/Login/View/Login.php');
+        echo "<script>location.href = 'Login.php';</script>";
       }
     }
     // create section
