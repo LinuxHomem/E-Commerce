@@ -45,7 +45,6 @@
           <button name="search" value="Doce" title="Doces" type="submit" class="btn btn-danger btn-circle"><i class="fa fa-cookie-bite"></i></button>
           <button name="search" value="Salgado" title="Salgados" type="submit" class="btn btn-success btn-circle"><i class="fa fa-pizza-slice"></i></button>
           <button name="search" value="Bebida" title="Bebidas" type="submit" class="btn btn-warning btn-circle"><i class="fa fa-coffee"></i></button>
-          <button name="search" value="Favorito" title="Favoritos" type="submit" class="btn btn-info btn-circle"><i class="fa fa-heart"></i></button>
         </center>
       </div>
     </form>
@@ -137,7 +136,7 @@
             </center>
           </div>
         </div>
-        <div class="footer-copyright text-center">© 2020 Copyright: Vinícius Araújo e Lucas Castro</div>
+        <div class="footer-copyright text-center">© 2020</div>
       </div>
     </footer>
 

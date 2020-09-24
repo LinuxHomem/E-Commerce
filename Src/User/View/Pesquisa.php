@@ -47,7 +47,6 @@
           <button name="search" value="Doce" title="Doce" type="submit" class="btn btn-danger btn-circle"><i class="fa fa-cookie-bite"></i></button>
           <button name="search" value="Salgado" title="Salgado" type="submit" class="btn btn-success btn-circle"><i class="fa fa-pizza-slice"></i></button>
           <button name="search" value="Bebida" title="Bebida" type="submit" class="btn btn-warning btn-circle"><i class="fa fa-coffee"></i></button>
-          <button name="search" value="Favorito" title="Favorito" type="submit" class="btn btn-info btn-circle"><i class="fa fa-heart"></i></button>
         </center>
       </div>
     </form>
@@ -97,17 +96,17 @@
         <div class="row">
           <div class="col-lg-8 col-md-8 col-sm-12">
             <h6 class="text-uppercase font-weight-bold">Sobre o Site</h6>
-            <p>Template feita por Vinícius A. Template para cafererias e vitrines.</p>
-            <p>Imagens e textos somente ilustrativos.</p>
+            <p>Template feita por Vinícius A. e Lucas Castro Template para cafererias e vitrines.</p>
+            <p>Imagens e textos somente ilustrativos. Site para Fins Didáticos, portanto Fontes foram ignoradas.</p>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12">
             <center>
-              <h6 class="text-uppercase font-weight-bold">Criador da Template</h6>
-              <p> Vinícius A.</p>
+              <h6 class="text-uppercase font-weight-bold">Criadores da Página</h6>
+              <p> Vinícius A. e Lucas Castro</p>
             </center>
           </div>
         </div>
-        <div class="footer-copyright text-center">© 2020 Copyright: Vinícius</div>
+        <div class="footer-copyright text-center">© 2020</div>
       </div>
     </footer>
 

@@ -72,8 +72,14 @@
       $prod_id = $arr[1];
       $qtd = $arr[2];
 
-      // $instance = new \CrudProduto();
-      // $prod = $instance->removeOne($prod_id,$qtd);
+      $instance = new \CrudProduto();
+      $produto = $instance->read(array($prod_id,"WHERE id = ?"));
+      $produto = $produto[1][0];
+
+      $qtd = $produto['quantidade'] - 1;
+
+      $instance = new \CrudProduto();
+      $prod = $instance->removeOne($prod_id,$qtd);
 
       $instance = new \CrudPedido();
       $pedidos = $instance->pronto($pedi_id);
