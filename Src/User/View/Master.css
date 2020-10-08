@@ -139,6 +139,10 @@ html, body, .content{
   .pb {
     font-size: 20px;
   }
+
+  .cd{
+    max-width:100%;
+  }
 }
 
 /* desktop */
@@ -157,6 +161,10 @@ html, body, .content{
 
   .pb {
     font-size: 40px;
+  }
+
+  .cd{
+    max-width:25%;
   }
 }
 

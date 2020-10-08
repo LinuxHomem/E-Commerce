@@ -2,7 +2,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
-    <title>Café do VAV - Pesquisar</title>
+    <title>E-Commerce Café - Pesquisar</title>
     <!-- mobile visualization -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon -->
@@ -59,7 +59,7 @@
 
         <?php
           if(!isset($_GET['pagina'])){
-              $_GET['pagina'] = 1;
+            $_GET['pagina'] = 1;
           }
 
           if(isset($_GET['search'])){
@@ -96,13 +96,13 @@
         <div class="row">
           <div class="col-lg-8 col-md-8 col-sm-12">
             <h6 class="text-uppercase font-weight-bold">Sobre o Site</h6>
-            <p>Template feita por Vinícius A. e Lucas Castro Template para cafererias e vitrines.</p>
+            <p>Template feita por Vinícius A. Template para cafererias e vitrines.</p>
             <p>Imagens e textos somente ilustrativos. Site para Fins Didáticos, portanto Fontes foram ignoradas.</p>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12">
             <center>
               <h6 class="text-uppercase font-weight-bold">Criadores da Página</h6>
-              <p> Vinícius A. e Lucas Castro</p>
+              <p> Vinícius A.</p>
             </center>
           </div>
         </div>

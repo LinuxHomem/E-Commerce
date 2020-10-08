@@ -2,7 +2,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
-    <title>Café do VAV</title>
+    <title>E-Commerce Café</title>
     <!-- mobile visualization -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon -->
@@ -52,7 +52,7 @@
     <header class="page-header header container-fluid">
       <div class="overlay">
         <div class="description">
-          <p id="way1" class="title" style="color: #ffffff; opacity: 0;">Café do VAV</p>
+          <p id="way1" class="title" style="color: #ffffff; opacity: 0;">E-Commerce Café</p>
         </div>
       </div>
     </header>
@@ -83,7 +83,7 @@
             <img src="https://istoe.com.br/wp-content/uploads/sites/14/2019/07/cafe.jpg" class="d-block w-100">
             <div class="carousel-caption d-none d-md-block over">
               <h5>Nosso Café Preto</h5>
-              <p>No Café do Nathan, você encontra o melhor, mais barato e mais <br>
+              <p>No E-Commerce de Café, você encontra o melhor, mais barato e mais <br>
                 tradicional café preto da região!</p>
             </div>
           </div>
@@ -126,13 +126,13 @@
         <div class="row">
           <div class="col-lg-8 col-md-8 col-sm-12">
             <h6 class="text-uppercase font-weight-bold">Sobre o Site</h6>
-            <p>Template feita por Vinícius A. e Lucas Castro Template para cafererias e vitrines.</p>
+            <p>Template feita por Vinícius A. Template para cafererias e vitrines.</p>
             <p>Imagens e textos somente ilustrativos. Site para Fins Didáticos, portanto Fontes foram ignoradas.</p>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12">
             <center>
               <h6 class="text-uppercase font-weight-bold">Criadores da Página</h6>
-              <p> Vinícius A. e Lucas Castro</p>
+              <p> Vinícius A.</p>
             </center>
           </div>
         </div>

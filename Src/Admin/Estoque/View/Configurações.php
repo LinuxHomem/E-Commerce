@@ -97,7 +97,7 @@
         <li>
           <div class="collapsible-header">
             <i class="material-icons">restore</i>
-            Resetar Ordem de ID's
+            Resetar Ordem de ID's dos Produtos
             <span class="badge"></span>
           </div>
 

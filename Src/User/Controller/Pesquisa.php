@@ -28,14 +28,14 @@
 
     if($bol){
       if($cArr[1] != 1){
-        $arr[] = (($cArr[1] / 2) * 10);
+        $arr[] = ((($cArr[1] / 2) * 10) + 2);
       }else{
         $arr[] = 0;
       }
 
       $arr[2] = "LIMIT " . $arr[2] . ",";
 
-      $arr[] = $cArr[1] * 10;
+      $arr[] = ($cArr[1] * 10) + 2;
     }else{
       $arr[] = "";
       $arr[] = "";
@@ -67,7 +67,7 @@
         $small = "<del>" . $small . "<del>";
       }
 
-      echo "<div style='max-width: 293px' class='card'>
+      echo "<div class='card cd'>
               <img src='$image' class='card-img-top'>
               <div class='card-body' style='background-color: #f2f2f2'>
                 <h5 class='card-title'>$nome</h5>
@@ -110,7 +110,7 @@
     $search = $_GET['search'];
     $pagina = $_GET['pagina'];
 
-    $pgs = ceil($count / 10);
+    $pgs = ceil($count / 12);
     if($pgs != 0){
       $sh = $_GET['search'];
       echo "<li class='page-item'>

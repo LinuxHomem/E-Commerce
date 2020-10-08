@@ -2,7 +2,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
-    <title>Café do VAV - Encomenda</title>
+    <title>E-Commerce Café - Encomenda</title>
     <!-- mobile visualization -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon -->
