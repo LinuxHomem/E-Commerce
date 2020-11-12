@@ -50,54 +50,48 @@
 
     <div class="container">
       <center>
-        <div class="card w-50 mt-5">
-          <?php
-          if(isset($_POST['produto'])){
-            $id = $_POST['produto'];
-          }else if(isset($_POST['pedir'])){
-            $id = $_POST['pedir'];
-          }else if(isset($_POST['car'])){
-          }else{
-            header('Location: /E-Commerce/Src/User/View');
-          }
-
-          $instance = new \CrudProduto();
-          $arr = $instance->read(array($id,"WHERE id = ?"));
-          $arr = $arr[1][0];
-
-          $image = "../../Common/Images/" . $arr['imagem'];
-          $nome = $arr['nome'];
-          $desc = $arr['descricao'];
-          $small = $arr['small'];
-          $valor = $arr['valor'];
-          $id = $arr['id'];
-
-          if(strstr($small,"R$")){
-            $small = "<del>$small<del>";
-          }
-
-          echo "<img src='../../Common/Images/$image' class='card-img-top'>
-                  <div class='card-body' style='background-color: #f2f2f2'>
-                    <h5 class='card-title'>$nome</h5>
-                    <p class='card-text'>$desc</p>
-                    <small>$small</small>
-                    <h5 class='text-success'>R$: $valor</h5>
-
-                    <form action='Encomenda.php' method='post'>
-                      <button name='pedir' value='$id' type='submit' style='font-size:20px' class='btn btn-warning'>Fazer Pedido</button>
-                      <button name='car' value='$id' type='submit' style='font-size:20px' class='btn btn-info'>Adicionar ao Carrinho</button>
-                    </form>
-                  </div>";
-          ?>
-
+        <div class="card enc mt-5">
           <?php
             if(isset($_POST['pedir'])){
               pedir(array($_POST['pedir']));
             }else if(isset($_POST['car'])){
               carrinho($_POST['car']);
+            }else{
+              if(isset($_POST['produto'])){
+                $id = $_POST['produto'];
+              }else{
+                header('Location: /E-Commerce/Src/User/View');
+              }
+
+              $instance = new \CrudProduto();
+              $arr = $instance->read(array($id,"WHERE id = ?"));
+              $arr = $arr[1][0];
+
+              $image = "../../Common/ProdImages/" . $arr['imagem'];
+              $nome = $arr['nome'];
+              $desc = $arr['descricao'];
+              $small = $arr['small'];
+              $valor = $arr['valor'];
+              $id = $arr['id'];
+
+              if(strstr($small,"R$")){
+                $small = "<del>$small<del>";
+              }
+
+              echo "<img src='../../Common/ProdImages/$image' class='card-img-top'>
+                      <div class='card-body' style='background-color: #f2f2f2'>
+                        <h5 class='card-title'>$nome</h5>
+                        <p class='card-text'>$desc</p>
+                        <small>$small</small>
+                        <h5 class='text-success'>R$: $valor</h5>
+
+                        <form action='Encomenda.php' method='post'>
+                          <button name='pedir' value='$id' type='submit' style='font-size:20px' class='btn btn-warning mb-3'>Fazer Pedido</button>
+                          <button name='car' value='$id' type='submit' style='font-size:20px' class='btn btn-info mb-3'>Adicionar ao Carrinho</button>
+                        </form>
+                      </div>";
             }
           ?>
-
         </div>
       </center>
     </div>

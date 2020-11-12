@@ -61,7 +61,7 @@
       $valor = $prod['valor'];
       $desc = $prod['descricao'];
       $small = $prod['small'];
-      $image = "../../Common/Images/" . $prod['imagem'];
+      $image = "../../Common/ProdImages/" . $prod['imagem'];
 
       if(strstr($small,"R$")){
         $small = "<del>" . $small . "<del>";

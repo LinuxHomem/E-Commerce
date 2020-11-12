@@ -20,7 +20,7 @@
       // Importar Módulo de Conexão e Crud de Logs
       session_start();
       if(isset($_SESSION['logged'])){
-        header('Location: /E-Commerce/Src/User/View/index.php');
+        header('Location: /E-Commerce/Src/User/View/Index.php');
       }
       require '../../../Common/MasterModel/Conn.php';
       require '../../../Common/MasterModel/CrudUsuario.php';

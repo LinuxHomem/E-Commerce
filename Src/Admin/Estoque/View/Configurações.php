@@ -17,7 +17,7 @@
       // Importar Módulo de Conexão, Crud de Logs e Crud de produtos
       session_start();
       if(!isset($_SESSION['adm'])){
-        header('Location: /E-Commerce/Src/User/View/index.php');
+        header('Location: /E-Commerce/Src/User/View/Index.php');
       }
       require '../../../Common/MasterModel/Conn.php';
       require '../../../Common/MasterModel/CrudProduto.php';
@@ -32,7 +32,7 @@
         <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
           <li><a class="inav" href="../../../User/View"><i class="material-icons left">arrow_back_ios</i>Voltar Para Loja</a></li>
-          <li><a class="inav" href="index.php"><i class="material-icons left">menu</i>Início</a></li>
+          <li><a class="inav" href="Index.php"><i class="material-icons left">menu</i>Início</a></li>
           <li><a class="inav" href="Estoque.php"><i class="material-icons left">storefront</i>Estoque</a></li>
           <li><a class="inav" href="Estatísticas.php"><i class="material-icons left">timeline</i>Estatísticas</a></li>
           <li><a class="inav" href="../../Pedidos/View/Pedidos.php"><i class="material-icons left">receipt</i>Pedidos</a></li>
@@ -44,7 +44,7 @@
     <ul class="sidenav" id="mobile-demo">
       <li class="margin"><p class="title5">Configurações</p></li>
       <li class="item"><a class="inav" href="../../../User/View"><i class="material-icons left">arrow_back_ios</i>Voltar Para Loja</a></li>
-      <li class="item"><a class="inav" href="index.php"><i class="material-icons left">menu</i>Início</a></li>
+      <li class="item"><a class="inav" href="Index.php"><i class="material-icons left">menu</i>Início</a></li>
       <li class="item"><a class="inav" href="Estoque.php"><i class="material-icons left">storefront</i>Estoque</a></li>
       <li class="item"><a class="inav" href="Estatísticas.php"><i class="material-icons left">timeline</i>Estatísticas</a></li>
       <li class="item"><a class="inav" href="../../Pedidos/View/Pedidos.php"><i class="material-icons left">receipt</i>Pedidos</a></li>

@@ -2,13 +2,13 @@
   function render(){
     if(isset($_POST['search'])){
       $instance = new \CrudUsuario();
-      $arr = $instance->read(array("","%" . $_POST['search'] . "%","nome LIKE ?"));
+      $arr = $instance->read(array("","%" . $_POST['search'] . "%","login LIKE ?"));
     }else{
       $instance = new \CrudUsuario();
       $arr = $instance->read(array("","0","id > ?"));
     }
 
-    echo "<table>
+    echo "<table class='responsive-table'>
             <thead>
               <tr>
                 <th>Id</th>
@@ -31,8 +31,8 @@
       echo "<tr>
               <td>$id</td>
               <td>$login</td>
-              <td>$email</td>
               <td>$nome</td>
+              <td>$email</td>
               <td>$tel</td>
             </tr>";
     }

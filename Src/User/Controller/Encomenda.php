@@ -13,7 +13,8 @@
     if(isset($_SESSION['carrinho']) and count($_SESSION['carrinho']) > 0){
       $arr = $_SESSION['carrinho'];
 
-      echo "<table class='table'>
+      echo "<div class='table-responsive'>
+            <table class='table'>
               <thead>
                 <tr>
                   <th scope='col'>Id</th>
@@ -34,6 +35,11 @@
         $id = $arr['id'];
         $nome = $arr['nome'];
         $info = $arr['small'];
+
+        if(strstr($info,"R$")){
+          $info = "<del>$info<del>";
+        }
+
         $valor = $arr['valor'];
 
         $subT += str_replace(",",".",$valor);
@@ -58,10 +64,9 @@
         $subT = $subT . ",00";
       }
 
-      echo "</tbody>
-          </table>
-          <p class='h3'>Subtotal: R$: $subT<p>
-          <button type='submit' name='pedir' value='' class='btn btn-success btn-lg my-2 my-sm-0 mr-1 ml-1'>Finalizar Pedidos</button>";
+      echo "</tbody></table></div>
+            <p class='h3'>Subtotal: R$: $subT<p>
+            <button type='submit' name='pedir' value='' class='btn btn-success btn-lg my-2 my-sm-0 mr-1 ml-1'>Finalizar Pedidos</button>";
     }else{
       echo "<center class'mt-5'>Nada por aqui. Vá ao seu perfil para conferir seus pedidos.</center>";
     }
@@ -86,7 +91,7 @@
 
       if($return){
         $_SESSION['carrinho'] = array();
-        header('Location: /E-Commerce/Src/Common/Login/View/Perfil.php');
+        header('Location: /E-Commerce/Src/User/View/Perfil.php');
       }else{
         echo "<script>alert('Não foi possível realizar pedido')</script>";
       }

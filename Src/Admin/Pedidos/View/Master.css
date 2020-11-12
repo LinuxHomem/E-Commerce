@@ -37,6 +37,11 @@ html, body, .content{
   margin-bottom: 6vh !important;
 }
 
+.margin{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 button {
   background: transparent;
   border: none !important;
@@ -45,15 +50,28 @@ button:active{
   background: transparent;
 }
 
+/* Mobile */
 @media only screen and (max-width: 649px){
   .title{
     font-family: Lemon Milk;
     font-size: 60px;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+
+  .title2{
+    font-family: Lemon Milk;
+    font-size: 30px;
     margin: 0px;
     text-align: center;
   }
+  
+  .mb{
+    margin-bottom: 70px !important;
+  }
 }
 
+/* Desktop */
 @media only screen and (min-width: 800px){
   .title{
     font-family: Lemon Milk;
@@ -61,12 +79,27 @@ button:active{
     margin: 0px;
     text-align: center;
   }
+
+  .title2{
+    font-family: Lemon Milk;
+    font-size: 30px;
+    margin: 0px;
+    text-align: center;
+  }
 }
 
+/* Tablet */
 @media only screen and (min-width: 650px) and (max-width: 799px){
   .title{
     font-family: Lemon Milk;
     font-size: 100px;
+    margin: 0px;
+    text-align: center;
+  }
+
+  .title2{
+    font-family: Lemon Milk;
+    font-size: 30px;
     margin: 0px;
     text-align: center;
   }

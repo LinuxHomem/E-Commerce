@@ -34,7 +34,7 @@
       }
 
       echo "<div style='opacity:0; bottom: -5vh' class='card cd$i'>
-              <img src='../../Common/Images/$imagem' class='card-img-top'>
+              <img src='../../Common/ProdImages/$imagem' class='card-img-top'>
               <div class='card-body' style='background-color: #f2f2f2'>
                 <h5 class='card-title'>$nome</h5>
                 <p class='card-text'>$desc</p>

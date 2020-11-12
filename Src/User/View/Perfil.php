@@ -22,18 +22,18 @@
       if(!isset($_SESSION['logged'])){
         header('Location: /E-Commerce/Src/User/View');
       }
-      require '../../MasterModel/Conn.php';
-      require '../../MasterModel/CrudUsuario.php';
-      require '../../MasterModel/CrudProduto.php';
-      require '../../MasterModel/CrudPedido.php';
+      require '../../Common/MasterModel/Conn.php';
+      require '../../Common/MasterModel/CrudUsuario.php';
+      require '../../Common/MasterModel/CrudProduto.php';
+      require '../../Common/MasterModel/CrudPedido.php';
       require '../Controller/Perfil.php';
-      require '../../MasterController/NavBar.php';
+      require '../../Common/MasterController/NavBar.php';
     ?>
   </head>
   <body>
     <!-- NavBar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-      <img href='../../../User/View' class="mr-3" style="max-width: 50px;" src="https://cdn4.iconfinder.com/data/icons/coffee-108/512/coffee-cafe-13-512.png">
+      <a href='Index.php'><img class="mr-3" style="max-width: 50px;" src="https://cdn4.iconfinder.com/data/icons/coffee-108/512/coffee-cafe-13-512.png"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -44,12 +44,16 @@
     </nav>
     <!-- NavBar -->
 
-    <center><p class="title mt-5">Perfil</p></center>
+    <center><p class="title2 mt-5">Perfil</p></center>
+    <div id="test">
 
-    <div class="cont2 pt-3" style='background-color: #f1f1f1;'>
-      <form class="" action="index.html" method="post">
-        <?php perfil(); ?>
-      </form>
+    </div>
+    <div class="container pt-3 mb-5 pb-3">
+      <?php perfil(); ?>
+
+      <div id="table">
+
+      </div>
     </div>
 
     <!-- import jquery JS -->
@@ -58,5 +62,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <!-- import bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- import pedidos JS -->
+    <script src="../Controller\Pedidos.js"></script>
   </body>
 </html>

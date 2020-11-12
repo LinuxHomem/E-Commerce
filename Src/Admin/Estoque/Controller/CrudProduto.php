@@ -27,7 +27,7 @@
       $cArr = array_chunk($cArr,3);
       $cArr[0][] = $name;
       $cArr = array_merge($cArr[0],$cArr[1]);
-      if(move_uploaded_file($temp, "../../../Common/Images/$name")){
+      if(move_uploaded_file($temp, "../../../Common/ProdImages/$name")){
 
         $instance = new \CrudProduto();
         return $instance->create($cArr);
@@ -82,7 +82,7 @@
       $server = $_SERVER['PHP_SELF'];
 
       echo "<form action='$server' method='post'>
-              <table class='striped centered'>
+              <table class='striped centered responsive-table'>
                 <thead>
                   <tr>
                     <th>ID</th>

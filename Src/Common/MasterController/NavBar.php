@@ -4,7 +4,7 @@
 
     if(isset($_SESSION['logged'])){
       echo "<li class='nav-item'>
-              <a href='/E-Commerce/Src/Common/Login/View/Perfil.php' class='btn btn-dark my-2 my-sm-0 mr-1 ml-1'>Perfil</a>
+              <a href='/E-Commerce/Src/User/View/Perfil.php' class='btn btn-dark my-2 my-sm-0 mr-1 ml-1'>Perfil</a>
             </li>";
 
       if(isset($_SESSION['adm'])){
@@ -21,6 +21,6 @@
     echo "</ul>
           <form action='/E-Commerce/Src/User/View/Pesquisa.php' method='get' class='form-inline my-2 my-lg-0'>
             <input name='search' class='form-control mr-sm-2' type='search' placeholder='Digite algo...'>
-            <button class='btn btn-outline-success my-2 my-sm-0' type='submit'>Pesquisar</button>
+            <button class='btn btn-secondary my-2 my-sm-0' type='submit'>Pesquisar</button>
           </form>";
   }

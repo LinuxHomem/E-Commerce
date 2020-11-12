@@ -17,7 +17,7 @@
       // Importar Módulo de Conexão, Crud de Produtos e Crud de Logs
       session_start();
       if(!isset($_SESSION['adm'])){
-        header('Location: /E-Commerce/Src/User/View/index.php');
+        header('Location: /E-Commerce/Src/User/View/Index.php');
       }
       require '../../../Common/MasterModel/Conn.php';
       require '../../../Common/MasterModel/CrudUsuario.php';
@@ -31,7 +31,7 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
           <li><a class="inav" href="../../../User/View"><i class="material-icons left">arrow_back_ios</i>Voltar Para Loja</a></li>
-          <li><a class="inav" href="index.php"><i class="material-icons left">menu</i>Início</a></li>
+          <li><a class="inav" href="Index.php"><i class="material-icons left">menu</i>Início</a></li>
           <li><a class="inav" href="Estoque.php"><i class="material-icons left">storefront</i>Estoque</a></li>
           <li><a class="inav" href="Estatísticas.php"><i class="material-icons left">timeline</i>Estatísticas</a></li>
           <li><a class="inav" href="Configurações.php"><i class="material-icons left">settings</i>Configurações</a></li>
@@ -43,9 +43,9 @@
 
     <!-- Mobile Sidebar -->
     <ul class="sidenav" id="mobile-demo">
-      <li class="margin"><p class="title2">ESTOQUE</p></li>
+      <li class="margin"><p class="title2">Usuários</p></li>
       <li class="item"><a class="inav" href="../../../User/View"><i class="material-icons left">arrow_back_ios</i>Voltar Para Loja</a></li>
-      <li class="item"><a class="inav" href="index.php"><i class="material-icons left">menu</i>Início</a></li>
+      <li class="item"><a class="inav" href="Index.php"><i class="material-icons left">menu</i>Início</a></li>
       <li class="item"><a class="inav" href="Estoque.php"><i class="material-icons left">storefront</i>Estoque</a></li>
       <li class="item"><a class="inav" href="Estatísticas.php"><i class="material-icons left">timeline</i>Estatísticas</a></li>
       <li class="item"><a class="inav" href="Configurações.php"><i class="material-icons left">settings</i>Configurações</a></li>
@@ -60,7 +60,7 @@
         <div class="row">
           <div class="input-field col s10">
             <input type="text" name="search" id="search" class="validate" required>
-            <label for="search">Pesquisa por Nome</label>
+            <label for="search">Pesquisa por Login</label>
           </div>
 
           <div class="col-2">

@@ -5,11 +5,12 @@
 
     if(count($pedidos) > 0){
 
-      echo "<table>
+      echo "<table class='striped responsive-table'>
               <thead>
                 <tr>
                   <th>N° do Pedido</th>
                   <th>Nome</th>
+                  <th>Apelido</th>
                   <th>Produto</th>
                   <th>Valor</th>
                   <th><th>
@@ -32,11 +33,13 @@
 
         $npedi = $pedi['id'];
         $nome = $user['nome'];
+        $apelido = $user['login'];
         $produto = $prod['nome'];
         $valor = $prod['valor'];
         echo "<tr>
                 <td>$npedi</td>
                 <td>$nome</td>
+                <td>$apelido</td>
                 <td>$produto</td>
                 <td>R$:$valor</td>
                 <td>";

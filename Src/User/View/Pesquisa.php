@@ -65,7 +65,7 @@
           if(isset($_GET['search'])){
             renderSearh(read($_GET,true));
           }else{
-            header('Location: /E-Commerce/Src/User/View/index.php');
+            header('Location: /E-Commerce/Src/User/View/Index.php');
           }
         ?>
 

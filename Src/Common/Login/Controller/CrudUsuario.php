@@ -71,7 +71,7 @@
           $_SESSION['adm'] = true;
         }
 
-        header('Location: /E-Commerce/Src/User/View/index.php');
+        header('Location: /E-Commerce/Src/User/View/Index.php');
       }else{
         echo "Senha Inválida";
       }
