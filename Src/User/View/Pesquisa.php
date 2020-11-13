@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -18,7 +20,6 @@
 
     <?php
       // Importar Módulo de Conexão, Crud de Logs e Crud de produtos
-      session_start();
       require '../../Common/MasterModel/Conn.php';
       require '../Model/Pesquisa.php';
       require '../Controller/Pesquisa.php';

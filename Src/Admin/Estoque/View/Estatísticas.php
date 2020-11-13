@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -17,7 +19,6 @@
 
     <?php
       // Importar Módulo de Conexão e Crud de Logs
-      session_start();
       if(!isset($_SESSION['adm'])){
         header('Location: /E-Commerce/Src/User/View/Index.php');
       }

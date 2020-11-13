@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -14,7 +16,6 @@
     <link rel="stylesheet" href="Master.css">
 
     <?php
-      session_start();
       if(!isset($_SESSION['adm'])){
         header('Location: /E-Commerce/Src/User/View/Index.php');
       }

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -16,7 +18,6 @@
     <!-- import personal css -->
     <link rel="stylesheet" href="Master.css">
     <?php
-      session_start();
       require '../../Common/MasterModel/Conn.php';
       require '../../Common/MasterModel/CrudProduto.php';
       require '../../Common/MasterController/NavBar.php';
